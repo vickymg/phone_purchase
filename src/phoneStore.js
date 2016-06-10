@@ -5,7 +5,7 @@ function PhoneStore() {
   const PHONE_PRICE = 99.99;
   const ACCESSORY_PRICE = 9.99;
 
-  this.bank_balance = 303.91;
+  this.customer_bank_balance = 303.91;
   this.amount = 0;
   this.overdrawn = false;
 
@@ -15,16 +15,17 @@ function PhoneStore() {
       return("You can't afford this phone! :-(");
     } else {
       this.amount += PHONE_PRICE;
+      this.deductCost();
     }
   };
 
   PhoneStore.prototype.checkBalance = function() {
-    if(this.bank_balance <= 0) {
+    if(this.customer_bank_balance <= 0) {
       this.overdrawn = true;
     }
   };
 
   PhoneStore.prototype.deductCost = function() {
-    this.bank_balance -= PHONE_PRICE;
+    this.customer_bank_balance -= PHONE_PRICE;
   }
 }
