@@ -11,4 +11,9 @@ describe("PhoneStore", function() {
     expect(phoneStore.amount).toEqual(99.99);
   });
 
+  it("checks the bank balance for sufficient funds", function() {
+    phoneStore.bank_balance = 0
+    expect(phoneStore.checkBalance()).toEqual("You can't afford this phone! :-(");
+  });
+
 });

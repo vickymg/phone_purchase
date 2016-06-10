@@ -11,4 +11,11 @@ function PhoneStore() {
   PhoneStore.prototype.sell = function() {
     this.amount += PHONE_PRICE;
   };
+
+  PhoneStore.prototype.checkBalance = function() {
+    if(this.bank_balance <= 0) {
+      return "You can't afford this phone! :-(";
+    }
+  };
+
 }
