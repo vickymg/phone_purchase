@@ -27,5 +27,10 @@ function PhoneStore() {
 
   PhoneStore.prototype.deductCost = function() {
     this.customer_bank_balance -= PHONE_PRICE;
-  }
+  };
+
+  PhoneStore.prototype.formatTotal = function() {
+    this.totalAmount = this.amount.toFixed(2)
+    return("Your purchase total is: £" + this.totalAmount)
+  };
 }

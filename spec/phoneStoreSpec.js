@@ -31,4 +31,9 @@ describe("PhoneStore", function() {
     phoneStore.sell();
     expect(+phoneStore.customer_bank_balance.toFixed(2)).toEqual(203.92);
   });
+
+  it("formats the total amount to pay", function() {
+    phoneStore.sell();
+    expect(phoneStore.formatTotal()).toEqual("Your purchase total is: £99.99");
+  });
 });
