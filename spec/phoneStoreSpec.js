@@ -33,7 +33,6 @@ describe("PhoneStore", function() {
   });
 
   it("formats the total amount to pay", function() {
-    phoneStore.sell();
     expect(phoneStore.returnTotal()).toEqual("Your purchase total is: £99.99");
   });
 

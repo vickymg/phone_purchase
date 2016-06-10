@@ -14,7 +14,6 @@ function PhoneStore() {
     if(this.overdrawn === true) {
       return("You can't afford this phone! :-(");
     } else {
-      this.amount += PHONE_PRICE;
       this.deductCost();
       this.returnTotal();
     }
@@ -31,7 +30,7 @@ function PhoneStore() {
   };
 
   PhoneStore.prototype.returnTotal = function() {
-    this.totalAmount = this.amount.toFixed(2)
-    return("Your purchase total is: £" + this.totalAmount)
+    this.amount += PHONE_PRICE;
+    return("Your purchase total is: £" + this.amount.toFixed(2))
   };
 }
