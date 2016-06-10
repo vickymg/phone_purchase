@@ -31,6 +31,6 @@ function PhoneStore() {
 
   PhoneStore.prototype.returnTotal = function() {
     this.amount += PHONE_PRICE;
-    return("Your purchase total is: £" + this.amount.toFixed(2))
+    return("Your purchase total is: £" + this.amount)
   };
 }
