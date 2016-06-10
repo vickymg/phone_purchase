@@ -34,6 +34,12 @@ describe("PhoneStore", function() {
 
   it("formats the total amount to pay", function() {
     phoneStore.sell();
-    expect(phoneStore.formatTotal()).toEqual("Your purchase total is: £99.99");
+    expect(phoneStore.returnTotal()).toEqual("Your purchase total is: £99.99");
+  });
+
+  it("returns the total purchase amount after a sale", function() {
+    spyOn(phoneStore, 'returnTotal');
+    phoneStore.sell();
+    expect(phoneStore.returnTotal).toHaveBeenCalled();
   });
 });
