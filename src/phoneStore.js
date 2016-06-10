@@ -7,14 +7,20 @@ function PhoneStore() {
 
   this.bank_balance = 303.91;
   this.amount = 0;
+  this.overdrawn = false;
 
   PhoneStore.prototype.sell = function() {
-    this.amount += PHONE_PRICE;
+    this.checkBalance();
+    if(this.overdrawn === true) {
+      return("You can't afford this phone! :-(");
+    } else {
+      this.amount += PHONE_PRICE;
+    }
   };
 
   PhoneStore.prototype.checkBalance = function() {
     if(this.bank_balance <= 0) {
-      return "You can't afford this phone! :-(";
+      this.overdrawn = true;
     }
   };
 
