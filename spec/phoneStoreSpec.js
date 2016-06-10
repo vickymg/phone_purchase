@@ -16,4 +16,8 @@ describe("PhoneStore", function() {
     expect(phoneStore.checkBalance()).toEqual("You can't afford this phone! :-(");
   });
 
+  it("deducts the cost of the phone from the bank balance", function() {
+    phoneStore.deductCost();
+    expect(+phoneStore.bank_balance.toFixed(2)).toEqual(203.92)
+  });
 });

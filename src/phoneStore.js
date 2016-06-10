@@ -18,4 +18,7 @@ function PhoneStore() {
     }
   };
 
+  PhoneStore.prototype.deductCost = function() {
+    this.bank_balance -= PHONE_PRICE;
+  }
 }
